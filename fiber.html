@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="高中课堂演示：从纤维素聚合物链，到金属离子，再到含间苯二酚结构片段的染料。分步观察氧位点与配位作用关系。">
+  <title>配位实验室 · 麻纤维与染料</title>
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="navigation.css"><link rel="stylesheet" href="fiber.css"><link rel="stylesheet" href="fiber-3d.css">
+</head>
+<body class="fiber-page">
+  <header class="header">
+    <a href="index.html" class="brand" aria-label="配位实验室首页"><span class="brand-mark" aria-hidden="true">✣</span><span>配位实验室<small>COORDINATION LAB</small></span></a>
+    <div class="header-center"><span class="live-dot"></span>交互式化学课堂<span class="header-divider"></span>课外探索 02</div>
+    <button class="text-button" id="aboutButton">ⓘ 模型说明</button>
+  </header>
+  <nav class="lab-navigation" aria-label="选择实验"><a href="index.html">01　铜配离子</a><a href="fiber.html" aria-current="page">02　麻纤维与染料 <span>课外探索 ↗</span></a></nav>
+  <main class="workspace fiber-workspace">
+    <aside class="sidebar">
+      <div class="eyebrow">CHEMISTRY IN EVERYDAY LIFE</div>
+      <h1>从一条纤维，<br>看懂配位。</h1>
+      <p class="intro">纤维上的氧，金属离子，<br>以及染料中的含氧基团。</p>
+      <div class="specimen"><span class="specimen-number">02 /</span><div><h2>麻纤维 · 金属 · 染料</h2><p>纤维素链段 ＋ Mⁿ⁺<span>参考图的作用关系示意</span></p></div></div>
+      <div class="section-label">课堂演示 <span>点击逐步观察</span></div>
+      <nav class="steps" aria-label="纤维染色演示阶段">
+        <button class="step active" data-progress="0" aria-pressed="true"><span class="step-number">01</span><span><strong>中心金属 · 空轨道</strong><small>固定中心，认识受体方向</small></span><span class="step-check">↗</span></button>
+        <button class="step" data-progress="0.5" aria-pressed="false"><span class="step-number">02</span><span><strong>纤维靠近 · 配位</strong><small>氧的孤电子对朝向中心</small></span><span class="step-check">↗</span></button>
+        <button class="step" data-progress="1" aria-pressed="false"><span class="step-number">03</span><span><strong>染料靠近 · 结合</strong><small>观察配位与螯合条件</small></span><span class="step-check">↗</span></button>
+      </nav>
+      <div class="insight"><span class="insight-icon">✧</span><div><span class="section-label">课堂观察</span><p id="observation">麻纤维的主要成分是纤维素。本图用一段不断延伸的纤维素链表示，重点观察链上的羟基氧。</p></div></div>
+      <div class="sidebar-foot"><span class="outline-dot"></span>先看结构，再看相互作用。</div>
+    </aside>
+    <section class="experiment fiber-experiment" aria-label="麻纤维金属染料分步演示">
+      <div class="experiment-top"><div><div class="eyebrow">FIBER · METAL · DYE</div><h2>金属居中，观察配位形成<span class="model-pill">MOL2 · 3D 球棍</span></h2></div><button class="icon-button" id="fullscreenButton" aria-label="切换演示全屏" title="课堂全屏">⛶</button></div>
+      <div class="fiber-sequence" aria-label="教学顺序：金属固定中央，纤维靠近，染料靠近"><span class="sequence-item current" data-sequence="0">中心金属<small>Mⁿ⁺ 固定</small></span><span>⟶</span><span class="sequence-item" data-sequence="1">纤维靠近<small>羟基氧供电子</small></span><span>⟶</span><span class="sequence-item" data-sequence="2">染料靠近<small>含氧位点结合</small></span><span class="sequence-caption">观察顺序，非反应方程式</span></div>
+      <div class="fiber-scene" id="sceneWrap">
+        <div class="scene-meta"><span class="scene-stage"><i></i><span id="stageBadge">中心金属与空轨道</span></span><span>MOL2 分子结构 · 配位布局为教学示意</span></div>
+        <canvas id="fiberScene" tabindex="0" role="img" aria-label="由用户 MOL2 模型构建的三维球棍演示。拖动旋转，滚轮或双指缩放。方向键旋转，加减键缩放，0 重置视角，空格播放或暂停。">纤维素链段、金属离子与间苯二酚型染料片段的三维球棍模型。</canvas>
+        <div class="orbital-caption"><strong>高中课堂演示</strong><span id="orbitalCaptionText">绿色：受体空轨道方向（非实际轨道计算）</span></div><div class="fiber-view-presets"><button id="wholeView" class="view-preset active">整体视角</button><button id="focusView" class="view-preset">聚焦作用区</button><button id="topView" class="view-preset">俯视</button></div><div class="fiber-view-toolbar"><button class="icon-button" id="zoomIn" aria-label="放大模型" title="放大">＋</button><button class="icon-button" id="zoomOut" aria-label="缩小模型" title="缩小">−</button><button class="icon-button" id="resetView" aria-label="重置模型视角" title="重置">↺</button></div>
+        <div class="fiber-scene-bottom"><span class="molecule-legend"><i class="atom-dot carbon"></i>C　<i class="atom-dot oxygen"></i>O　<i class="atom-dot hydrogen"></i>H　<i class="atom-dot metal"></i>Mⁿ⁺　<i class="legend-coordinate"></i>配位键示意　<i class="atom-dot orbital"></i>轨道示意　<i class="atom-dot electron"></i>电子对　<i class="atom-dot chelate"></i>条件闭环</span><span>拖动旋转 · 滚轮 / 双指缩放</span></div>
+      </div>
+      <div class="electron-explanation" aria-label="电子对特写"><div class="electron-explanation-title"><span class="section-label">电子对特写</span><strong id="electronStatus" role="status">成键前：氧提供一对孤电子</strong></div><div class="pair-phases"><div class="pair-phase active" data-pair-phase="0"><span class="pair-formula">O <i class="pair-two">••</i>　 +　 M<sup>n+</sup></span><small>氧提供一对孤电子</small></div><span class="pair-next">→</span><div class="pair-phase" data-pair-phase="1"><span class="pair-formula">O <i class="pair-two">••</i> ⟶ M<sup>n+</sup></span><small>电子对参与配位成键</small></div><span class="pair-next">→</span><div class="pair-phase" data-pair-phase="2"><span class="pair-formula pair-shared">O <i class="pair-two">••</i> M<sup>n+</sup></span><small>共用电子对 · 两电子均来自氧</small></div></div></div>
+      <p class="science-caption"><span>读图提示</span>螯合条件：同一配体的两个或更多位点同时结合到同一金属。紫色闭环用于讲解此条件，不代表已证实本体系形成该螯合物。</p>
+      <div class="transport"><button class="play-button" id="playButton" aria-label="播放三步演示"><span id="playIcon">▶</span><span id="playText">播放过程</span></button><button class="icon-button restart-button" id="restartButton" aria-label="回到第一步" title="回到第一步">↶</button><div class="timeline"><div class="timeline-label"><span id="timelineLabel">先认识纤维素链上的羟基</span><output id="progressText" for="progress">0%</output></div><input id="progress" type="range" min="0" max="1000" step="1" value="0" aria-label="课堂演示进度"><div class="timeline-ticks"><span>中心与空轨道</span><span>纤维靠近</span><span>染料靠近</span></div></div><label class="speed-control" for="speed">速度<select id="speed" aria-label="演示速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>
+      <div class="display-controls"><span class="section-label">显示选项</span><label class="toggle-label"><input type="checkbox" id="showSites" checked><span class="switch"></span>氧位点高亮</label><label class="toggle-label"><input type="checkbox" id="showElectrons" checked><span class="switch"></span>孤电子对 / 共用电子对</label><label class="toggle-label"><input type="checkbox" id="showOrbitals" checked><span class="switch"></span>空轨道 / 成键区示意</label><label class="toggle-label"><input type="checkbox" id="showChelateRings" checked><span class="switch"></span>螯合环条件示意</label><label class="toggle-label"><input type="checkbox" id="showLabels" checked><span class="switch"></span>说明标注</label><label class="toggle-label"><input type="checkbox" id="showGlycosidic"><span class="switch"></span>β(1→4) 连接</label><label class="toggle-label"><input type="checkbox" id="showHydrogens" checked><span class="switch"></span>氢原子</label><label class="toggle-label"><input type="checkbox" id="autoRotate"><span class="switch"></span>自动旋转</label></div>
+      <div class="fiber-readout"><div><span class="readout-label">当前观察</span><strong id="stageTitle">麻纤维：关注羟基氧</strong></div><div><span class="readout-label">聚合物结构</span><strong>纤维素链段<span class="readout-unit">3 个糖环 · 甲基封端</span></strong></div><div><span class="readout-label">金属中心</span><strong>始终居中<span class="readout-unit">Mⁿ⁺ · 具体金属未指定</span></strong></div></div>
+      <details class="model-details" id="modelDetails"><summary>教师说明与结构依据<span>课堂使用前可展开 ↗</span></summary><div class="details-body">
+        <p><strong>课堂要点：</strong>中心金属固定在画面中央，纤维素链段先靠近，间苯二酚型片段随后靠近。黄色成对小球在成键前位于氧旁，成键后位于 O—M 键区，表示共用电子对；两个电子最初均由氧提供。实线表示形成后的配位键（教学布局）；这是课堂讲解顺序，不是测定的反应动力学路径。</p>
+        <p><strong>麻纤维与纤维素：</strong>天然麻纤维并非单一纯物质，本页选取其主要成分纤维素表示。球棍模型使用提供的麻纤维 MOL2，展示三个相连的葡萄糖残基，端部以甲基封端。此封端小模型表示聚合物局部，C₂₀H₃₆O₁₆ 是封端模型的分子式，不是纤维素聚合物的分子式。模型保留 β(1→4) 连接；甲基封端处以浅绿色光环标出。</p>
+        <p><strong>染料片段：</strong>间苯二酚模型保留截图中的1,3 位羟基结构，作为染料中含氧片段的简化模型。游离间苯二酚 C₆H₆O₂ 本身不能当作已确定的有色植物染料；页面没有指定完整天然染料，也不预测颜色。</p>
+        <p><strong>电子对图示：</strong>形成配位键的两个共用电子由同一供体氧提供。电子对从氧旁移到键区，是课堂符号动画，不表示电子沿确定轨迹运动，也不表示真实电子密度等量分布于两个原子。成键后依然用同一对黄色标记，未额外生成电子。画面中的实线仅改变示意键的画法，没有把金属配位边写入 MOL2 的已验证分子连接。</p>
+        <p><strong>空轨道教学模型：</strong>绿色叶瓣只表示受体空轨道方向，专用于高中课堂演示，不是实际轨道形状、数目或能级计算。未指定金属，故不标 s、p、d 或 dsp² 等杂化类型。配位发生后，相应绿色区改标为“成键重叠区”，不能继续解释为未占据的空轨道。</p>
+        <p><strong>螯合条件：</strong>同一配体的两个或更多独立结合位点同时结合于同一中心原子，才构成螯合。本页选用纤维中间糖单元的两个羟基氧（MOL2 原子 23、24）作为观察位点，可用紫色闭环追踪“金属—供体氧—配体内部共价路径—另一供体氧—金属”，用于说明这一条件。两种片段的紫色环都是条件示意，不能由此确认间苯二酚或纤维在具体条件下必然双齿配位；两个不同单齿配体连接同一金属，也不能仅因此称为螯合。</p>
+        <p><strong>配位边界：</strong>参考图中的虚线及本页的金属—氧示意实线都是位点之间作用关系的示意，不能据此宣称同一间苯二酚必然双齿螯合同一金属，或推出金属为四配位／平面正方形。实际结合取决于金属种类、染料结构、pH、纤维处理及其他配体，且可能伴随氢键与吸附。本页未画出水配体、反离子和质子转移，结构式的 OH 保留中性形式，不表示实际配合物中唯一的质子化状态。</p>
+        <p><strong>三维来源与校正：</strong>保留两个原始 MOL2。原麻纤维模型末端糖单元的五个手性中心与 β-D-纤维素标准构型相反，已在另一份文件中校正，原子编号为 25、27、28、29、30。校正保留分子连接和所有内部键长，未做能量最小化。分子在动画中仅做刚体移动；左右朝向通过保持手性的正交旋转得到；金属位置和虚线不是优化所得的真实配合物构型。间苯二酚的芳环保持平面。黄色电子对和半透明区域仅作电子对方向示意，未计算轨道。</p>
+        <div class="model-reference-grid"><figure><img src="structures/cellulose-mol2-2d.svg" alt="校正后的三糖环甲基封端纤维素链段二维结构式"><figcaption>校正模型对应的二维结构（甲基封端）</figcaption></figure><figure><img src="structures/resorcinol-mol2-2d.svg" alt="间苯二酚的1,3位羟基结构"><figcaption>间苯二酚：1,3 位羟基</figcaption></figure></div>
+        <div class="references"><a href="structures/麻纤维.mol2" download>原始麻纤维 MOL2 ↓</a><a href="structures/麻纤维-构型校正.mol2" download>构型校正模型 ↓</a><a href="structures/间苯二酚.mol2" download>间苯二酚 MOL2 ↓</a><a href="https://goldbook.iupac.org/terms/view/D01523" target="_blank" rel="noopener noreferrer">配位键与共用电子对 · IUPAC ↗</a><a href="https://goldbook.iupac.org/terms/view/C01012" target="_blank" rel="noopener noreferrer">螯合定义 · IUPAC Gold Book ↗</a><a href="https://pubchem.ncbi.nlm.nih.gov/compound/5054" target="_blank" rel="noopener noreferrer">间苯二酚 · PubChem CID 5054 ↗</a><a href="https://pubchem.ncbi.nlm.nih.gov/compound/170125" target="_blank" rel="noopener noreferrer">链段结构来源 · PubChem CID 170125 ↗</a><a href="https://publications.iupac.org/pac/pdf/2006/pdf/7810x1843.pdf" target="_blank" rel="noopener noreferrer">纤维素结构 · IUPAC ↗</a><a href="https://onlinelibrary.wiley.com/doi/10.1155/2016/1380105" target="_blank" rel="noopener noreferrer">纤维媒染的研究背景 ↗</a><a href="structures/mol2-verification.json" download>下载结构核对记录 ↓</a></div>
+      </div></details>
+    </section>
+  </main>
+  <footer class="footer"><span>COORDINATION LAB <i>/</i> 从微观理解化学</span><span>分子连接已核对 · 金属作用为教学关系示意</span></footer>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+  <script src="structures/model3d-data.js"></script><script src="coordination-scene.js"></script><script src="fiber-3d.js"></script>
+</body></html>

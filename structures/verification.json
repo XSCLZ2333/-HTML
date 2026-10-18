@@ -1,0 +1,76 @@
+{
+  "fiber": {
+    "width": 1100,
+    "height": 280,
+    "donors": [
+      {
+        "x": 519.121,
+        "y": 23.252,
+        "element": "O",
+        "index": 13
+      },
+      {
+        "x": 715.117,
+        "y": 35.882,
+        "element": "O",
+        "index": 10
+      }
+    ],
+    "glycosidicO": [
+      {
+        "x": 488.127,
+        "y": 182.727,
+        "element": "O",
+        "index": 0
+      },
+      {
+        "x": 639.454,
+        "y": 84.83,
+        "element": "O",
+        "index": 2
+      }
+    ],
+    "smiles": "*O[C@@H]1O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@@H](O[C@@H]3O[C@H](CO)[C@@H](O*)[C@H](O)[C@H]3O)[C@H](O)[C@H]2O)[C@H](O)[C@H]1O",
+    "glucoseUnits": 3,
+    "definedStereocenters": 15,
+    "note": "Three cyclic glucosyl residues retained from PubChem CID 170125. Two * atoms mark continuation; not a free cellotriose molecule."
+  },
+  "dye": {
+    "width": 380,
+    "height": 300,
+    "donors": [
+      {
+        "x": 54.687,
+        "y": 224.171,
+        "element": "O",
+        "index": 0
+      },
+      {
+        "x": 325.683,
+        "y": 224.171,
+        "element": "O",
+        "index": 1
+      }
+    ],
+    "formula": "C6H6O2",
+    "smiles": "Oc1cccc(O)c1"
+  },
+  "sources": [
+    {
+      "cid": 170125,
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/170125"
+    },
+    {
+      "cid": 5054,
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5054"
+    }
+  ],
+  "checks": {
+    "sanitized": true,
+    "fiberRings": 3,
+    "fiberStereocenters": 15,
+    "internalBeta14Links": 2,
+    "resorcinolOxygenSubstitution": "1,3",
+    "noComplexGeometryClaim": true
+  }
+}

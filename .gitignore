@@ -1,0 +1,20 @@
+# Dependencies and generated files
+node_modules/
+__pycache__/
+*.pyc
+*.log
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.openai/
+.sites-runtime/
+.sites-checkout/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

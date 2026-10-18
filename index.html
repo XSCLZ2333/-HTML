@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="旋转、播放和逐帧观察四水合铜(II)教学模型，探索水分子孤电子对参与配位的过程。">
+  <title>配位实验室 · 四水合铜形成过程</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+  <header class="header">
+    <a href="./" class="brand" aria-label="配位实验室首页"><span class="brand-mark" aria-hidden="true">✣</span><span>配位实验室<small>COORDINATION LAB</small></span></a>
+    <div class="header-center"><span class="live-dot"></span>交互式化学课堂<span class="header-divider"></span>实验 01</div>
+    <button class="text-button" id="aboutButton"><span aria-hidden="true">ⓘ</span> 模型说明</button>
+  </header>
+  <nav class="lab-navigation" aria-label="选择实验"><a href="index.html" aria-current="page">01　铜配离子</a><a href="fiber.html">02　麻纤维与染料 <span>课外探索 ↗</span></a></nav>
+  <main class="workspace">
+    <aside class="sidebar">
+      <div class="eyebrow">EXPLORE THE INVISIBLE</div>
+      <h1>看见配位键<br>的形成。</h1>
+      <p class="intro">从氧原子的一对孤电子，<br>到围绕铜离子的四条配位键。</p>
+      <div class="specimen"><span class="specimen-number">01 /</span><div><h2>四水合铜(II)离子</h2><p>[Cu(H₂O)₄]²⁺ <span>教学模型</span></p></div></div>
+      <div class="section-label">反应路径 <span>点击切换阶段</span></div>
+      <nav class="steps" aria-label="形成阶段">
+        <button class="step active" data-progress="0" aria-pressed="true"><span class="step-number">01</span><span><strong>游离 · 相遇之前</strong><small>Cu²⁺ 与四个 H₂O</small></span><span class="step-check" aria-hidden="true">↗</span></button>
+        <button class="step" data-progress="0.48" aria-pressed="false"><span class="step-number">02</span><span><strong>靠近 · 电子对定向</strong><small>氧的孤电子对朝向中心</small></span><span class="step-check" aria-hidden="true">↗</span></button>
+        <button class="step" data-progress="1" aria-pressed="false"><span class="step-number">03</span><span><strong>配位 · 形成整体</strong><small>四条 Cu—O 配位键</small></span><span class="step-check" aria-hidden="true">↗</span></button>
+      </nav>
+      <div class="insight"><span class="insight-icon" aria-hidden="true">✧</span><div><span class="section-label">观察重点</span><p id="observation">水分子以氧原子作为配位原子；氧上的一对孤电子可参与配位成键。</p></div></div>
+      <div class="sidebar-foot"><span class="outline-dot"></span>微观过程，慢慢看。</div>
+    </aside>
+    <section class="experiment" aria-label="配位形成交互演示">
+      <div class="experiment-top"><div><div class="eyebrow">MOLECULAR EXPLORER</div><h2>四个水分子，一次配位相遇<span class="model-pill">3D 示意</span></h2></div><button class="icon-button" id="fullscreenButton" aria-label="切换演示全屏" title="演示全屏">⛶</button></div>
+      <div class="equation" aria-label="教学模型形成式：二价铜离子加四个水分子形成四水合铜二价配离子"><span class="copper-text">Cu²⁺</span><span class="math-symbol">＋</span><span>4H₂O</span><span class="equation-arrow">⟶<small>配位</small></span><span>[Cu(H₂O)₄]²⁺</span><span class="equation-caption">教学模型形成式</span></div>
+      <div class="scene-wrap" id="sceneWrap">
+        <div class="scene-meta"><span class="scene-stage"><i></i><span id="stageBadge">游离态</span></span><span id="geometryBadge">氧原子朝向 Cu²⁺</span></div>
+        <canvas id="moleculeCanvas" tabindex="0" role="img" aria-label="可旋转的三维分子模型。拖动旋转，滚轮缩放；方向键旋转，加减键缩放。中央为铜离子，四周为四个水分子。">中央铜离子与四个水分子组成的配位过程。请使用下方播放按钮或进度条观察。</canvas>
+        <div class="scene-legend" aria-label="颜色图例"><span><i class="dot cu"></i>Cu²⁺</span><span><i class="dot oxygen"></i>O</span><span><i class="dot hydrogen"></i>H</span><span><i class="dot electron"></i>孤电子对</span><span><i class="dot orbital"></i>配位方向</span></div>
+        <div class="view-toolbar"><button class="icon-button" id="zoomIn" aria-label="放大模型" title="放大">＋</button><button class="icon-button" id="zoomOut" aria-label="缩小模型" title="缩小">−</button><span></span><button class="icon-button" id="resetView" aria-label="重置视角" title="重置视角">↺</button></div>
+        <div class="scene-hint"><span aria-hidden="true">⤧</span> 拖动旋转 <span>·</span> 滚轮 / 双指缩放</div>
+        <div class="canvas-note">轨道、电子与原子大小均为示意</div>
+      </div>
+      <div class="transport">
+        <button class="play-button" id="playButton" aria-label="播放形成过程"><span id="playIcon" aria-hidden="true">▶</span><span id="playText">播放过程</span></button>
+        <button class="icon-button restart-button" id="restartButton" aria-label="回到起点" title="回到起点">↶</button>
+        <div class="timeline"><div class="timeline-label"><span id="timelineLabel">准备观察</span><output id="progressText" for="progress">0%</output></div><input id="progress" type="range" min="0" max="1000" step="1" value="0" aria-label="反应进度"><div class="timeline-ticks"><span>游离</span><span>定向靠近</span><span>配位完成</span></div></div>
+        <label class="speed-control" for="speed">速度<select id="speed" aria-label="播放速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+      </div>
+      <div class="display-controls"><span class="section-label">显示选项</span><label class="toggle-label"><input type="checkbox" id="showElectrons" checked><span class="switch"></span>孤电子对</label><label class="toggle-label"><input type="checkbox" id="showOrbitals" checked><span class="switch"></span>配位方向</label><label class="toggle-label"><input type="checkbox" id="showLabels" checked><span class="switch"></span>原子标注</label><label class="toggle-label"><input type="checkbox" id="autoRotate"><span class="switch"></span>自动旋转</label><label class="background-control" title="选择画布背景">背景<input id="backgroundColor" type="color" value="#f6f7f2" aria-label="画布背景颜色"></label></div>
+      <div class="readout"><div><span class="readout-label">当前阶段</span><strong id="stageTitle">水分子与铜离子分离</strong></div><div><span class="readout-label">模型目标配位数</span><strong>4<span class="readout-unit">个水配体</span></strong></div><div><span class="readout-label">最终几何构型</span><strong>平面正方形<span class="readout-unit">理想化</span></strong></div><div class="charge-readout"><span class="readout-label">模型体系总电荷</span><strong>2<span class="superscript">+</span></strong></div></div>
+      <details class="model-details" id="modelDetails"><summary>关于这个教学模型<span>模型边界与参考资料 ↗</span></summary><div class="details-body"><p>本页按参考图，用四个处于同一平面、指向 Cu²⁺ 的水配体演示 [Cu(H₂O)₄]²⁺ 的配位成键。每个氧原子示意两对孤电子，其中一对参与 Cu—O 成键；形成配位键的两个电子由水分子提供。水配体为中性，模型体系总电荷保持 2+。</p><p>这是可控制进度的教学动画，不是量子化学计算或真实反应动力学。四个水分子同步靠近仅用于展示；电子云形状、电子小球、原子比例和成键进度都不表示实测结果。绿色区域表示配位方向，不指定为真实的 dsp² 空轨道。</p><p>水溶液中的铜(II)水合结构更复杂，常用具有 Jahn–Teller 畸变的六配位结构描述，含四个较近的赤道水配体及两个较远的轴向配体；具体水合结构还与环境及测量模型有关。本页四配位模型不代表完整的水溶液水合结构。</p><div class="references"><a href="https://pubs.rsc.org/en/content/articlelanding/2002/dt/b200698g/unauth" target="_blank" rel="noopener noreferrer">结构研究 · Dalton Transactions (2002) ↗</a><a href="https://pubs.rsc.org/en/content/articlehtml/2013/ra/c3ra42400f" target="_blank" rel="noopener noreferrer">水合结构研究 · RSC Advances (2013) ↗</a></div></div></details>
+    </section>
+  </main>
+  <footer class="footer"><span>COORDINATION LAB <i>/</i> 从微观理解化学</span><span>四配位教学示意 · 非动力学模拟</span></footer>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "sources": {
+    "fiber": "麻纤维.mol2",
+    "dye": "间苯二酚.mol2"
+  },
+  "fiber": {
+    "atoms": 72,
+    "bonds": 74,
+    "formula": "C20H36O16",
+    "glucoseRings": 3,
+    "stereocenters": 15,
+    "methylCaps": [
+      9,
+      36
+    ],
+    "glycosidicO": [
+      11,
+      22
+    ]
+  },
+  "dye": {
+    "atoms": 14,
+    "bonds": 14,
+    "formula": "C6H6O2",
+    "oxygenPosition": "1,3",
+    "planarAromaticRing": true
+  },
+  "repair": {
+    "reason": "Terminal sugar unit has opposite handedness relative to beta-D-cellulose reference",
+    "originalAtomIDs": [
+      25,
+      27,
+      28,
+      29,
+      30
+    ],
+    "correctedAtomIDs": [
+      25,
+      27,
+      28,
+      29,
+      30
+    ],
+    "all15CentersMatchReference": true,
+    "bondLengthMaxChangeAngstrom": 1.3322676295501878e-15,
+    "method": "Reflect terminal glucosyl component in glycosidic plane; no energy optimization",
+    "originalPreserved": true,
+    "serializedBondLengthMaxChangeAngstrom": 7.440247391854449e-06
+  },
+  "sourceSHA256": {
+    "麻纤维.mol2": "919ab8c2b9f6315837d3153723bc31f3324e21af3efd7eea2b3d4fefe015f0c4",
+    "间苯二酚.mol2": "0af27a954006daddea1b9587958a2590b76d75028b9affcadd83f28e1c901d8f"
+  },
+  "scope": "Ball-and-stick geometry from MOL2; metal placement and illustrative metal-O bonds are conditional teaching layouts, not optimized complexes."
+}
